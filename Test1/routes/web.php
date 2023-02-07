@@ -20,3 +20,7 @@ Route::get('/', function () {
 Route::get('/servicios', function () {
     return 'Página de servicios';
 });
+
+Route::get('/detalle/{id}/{nombre}', function ($id, $nombre) {
+    return 'Detalle '.$id . ' de '.$nombre;
+})->where('nombre', '[a-zA-Z]+');
