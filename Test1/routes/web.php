@@ -1,6 +1,7 @@
 <?php
 
 use Illuminate\Support\Facades\Route;
+use App\Http\Controllers\InicioController;
 
 /*
 |--------------------------------------------------------------------------
@@ -17,10 +18,12 @@ Route::get('/', function () {
     return view('welcome');
 });
 
-Route::get('/servicios', function () {
+/*Route::get('/servicios', function () {
     return 'Página de servicios';
 });
 
 Route::get('/detalle/{id}/{nombre}', function ($id, $nombre) {
     return 'Detalle '.$id . ' de '.$nombre;
-})->where('nombre', '[a-zA-Z]+');
+})->where('nombre', '[a-zA-Z]+');*/
+
+Route::get('/inicio', [InicioController::class, 'saludar']);
