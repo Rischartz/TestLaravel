@@ -2,6 +2,7 @@
 
 use Illuminate\Support\Facades\Route;
 use App\Http\Controllers\InicioController;
+use App\Http\Controllers\Prueba2Controller;
 
 /*
 |--------------------------------------------------------------------------
@@ -24,6 +25,12 @@ Route::get('/', function () {
 
 Route::get('/detalle/{id}/{nombre}', function ($id, $nombre) {
     return 'Detalle '.$id . ' de '.$nombre;
-})->where('nombre', '[a-zA-Z]+');*/
+})->where('nombre', '[a-zA-Z]+');
 
 Route::get('/inicio', [InicioController::class, 'saludar']);
+
+Route::get('/foro', function () {
+    return view('foro');
+});*/
+
+Route::resource("post", Prueba2Controller::class);
